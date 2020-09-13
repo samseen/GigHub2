@@ -17,6 +17,7 @@ namespace GigHub2.Controllers
             _context = new ApplicationDbContext();
         }
 
+        [Authorize]
         public ActionResult Create()
         {
             var viewModel = new GigFormViewModel
