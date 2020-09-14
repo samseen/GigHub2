@@ -34,7 +34,11 @@ namespace GigHub2.Controllers
         public ActionResult Create(GigFormViewModel viewModel)
         {
             if (!ModelState.IsValid)
+            {
+                viewModel.Genres = _context.Genres.ToList();
                 return View("Create", viewModel);
+            }
+                
 
             var gig = new Gig
             {
