@@ -63,4 +63,6 @@ textarea {
 
  .form-control {
      font-size: 17px;
+     padding: 20px 15px;
+     border-radius: 9px;
  }
