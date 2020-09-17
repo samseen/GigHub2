@@ -46,6 +46,11 @@ textarea {
     -webkit-box-shadow: none;
 }
 
+.navbar-invers .navbar-nav > .dropdown > a .caret {
+    border-top-color: #fff;
+    border-bottom-color: #fff;
+}
+
  body {
      font-size: 17px;
  }
