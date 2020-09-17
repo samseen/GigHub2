@@ -41,6 +41,11 @@ textarea {
     background-color: rgba(205, 40, 39, 0.55);
 }
 
+.dropdown-menu {
+    box-shadow: none;
+    -webkit-box-shadow: none;
+}
+
  body {
      font-size: 17px;
  }
