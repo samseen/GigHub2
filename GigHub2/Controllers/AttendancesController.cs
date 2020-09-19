@@ -20,12 +20,20 @@ namespace GigHub2.Controllers
         }
 
         [HttpPost]
-        public IHttpActionResult Attend(int gigId)
+        public IHttpActionResult Attend([FromBody] int gigId)
         {
+            var userId = User.Identity.GetUserId();
+
+            var exists = _context.Attendances
+                .Any(a => a.AttendeeId == userId && a.GigId == gigId);
+
+            if (exists)
+                return BadRequest("The attendance already exists.");
+
             var attendance = new Attendance
             {
                 GigId = gigId,
-                AttendeeId = User.Identity.GetUserId()
+                AttendeeId = userId
             };
             _context.Attendances.Add(attendance);
             _context.SaveChanges();
