@@ -19,6 +19,7 @@ namespace GigHub2.Controllers
             _context = new ApplicationDbContext();
         }
 
+        [HttpPost]
         public IHttpActionResult Attend(int gigId)
         {
             var attendance = new Attendance
@@ -26,6 +27,10 @@ namespace GigHub2.Controllers
                 GigId = gigId,
                 AttendeeId = User.Identity.GetUserId()
             };
+            _context.Attendances.Add(attendance);
+            _context.SaveChanges();
+
+            return Ok();
         }
     }
 }
