@@ -1,4 +1,5 @@
-﻿using GigHub2.Models;
+﻿using GigHub2.Dto;
+using GigHub2.Models;
 using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
